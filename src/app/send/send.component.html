@@ -1,0 +1,142 @@
+<ons-page>
+    <ons-toolbar>
+        <div class="center">
+            Envoyer
+              </div>
+        <div class="left">
+          <ons-toolbar-button (click)="openMenu()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+      </ons-toolbar>
+    
+      <div class="content">
+    
+          <div class="center" *ngIf="load.downloadState != 'started'">
+              <ons-segment #segment id="segment" style="width: 100%; margin-top: 8px; position: fixed; z-index: 1;">
+                <button (click)="index = 0">Document</button>
+                <button (click)="index = 1">Annonce</button>
+              </ons-segment>
+            </div>
+        
+                <!--debut document section-->
+        
+                <div *ngIf="index == 0" style="margin-top: 40px">
+                   
+                    <form [formGroup]="document" (ngSubmit)="onSubmitCourse()" style="margin-top: 10px">
+
+                        <ons-list>
+                                <ons-list-item>
+                                Nom du document
+                                <ons-input class="w3-input" formControlName="title" required></ons-input>
+                                </ons-list-item>
+
+                                <ons-list-item>
+                                Université: 
+                                <select class="w3-select" (change)="univs.onChange($event.target.value)" formControlName="university">
+                                    <option *ngFor="let uni of univs.university" [value]="uni">{{uni}}</option>
+                                  </select>
+                                </ons-list-item>
+
+                                <ons-list-item>
+                                Filière: 
+                                <select class="w3-select" formControlName="spinneret" required>
+                                    <option *ngFor="let spin of univs.spinnerets" [value]="spin">{{spin}}</option>
+                                  </select>
+                                </ons-list-item>
+
+                                <ons-list-item>
+                                  Matière
+                                <ons-input class="w3-input" formControlName="subject" required></ons-input>
+                                </ons-list-item>
+
+                                <ons-list-item>
+                                Niveau:
+                                 <select class="w3-select" formControlName="level" required>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                 </select>
+                                </ons-list-item>
+
+                                <ons-list-item>
+                                Type:
+                                 <select class="w3-select" formControlName="type" required>
+                                    <option value="Support de cours">Support de cours</option>
+                                    <option value="TD">TD</option>
+                                  </select>
+                                </ons-list-item>
+                
+                                <ons-list-item>
+                            <span>Fichier à envoyer</span>
+                              <ons-input type="file" class="w3-input" (change)="uploadFile($event)" formControlName="file" required></ons-input>
+                                </ons-list-item>
+
+                              </ons-list>
+                              <div *ngIf="load.percentage | async as pct">
+                                <mat-progress-bar mode="determinate" [value]="pct" max="100"></mat-progress-bar>
+                                {{ pct | number }}%
+                              </div>
+
+                          <div style="text-align: center; margin: 10px" *ngIf="load.downloadState != 'started'">
+                              <button type="submit" [disabled]="!document.valid">Envoyer</button>
+                              </div>
+                          </form>
+                
+        
+                    </div>
+        
+                <!--fin classe section-->
+        
+                <!--debut annonce section-->
+        
+                <div  *ngIf="index == 1" style="margin-top: 40px">
+                    <form [formGroup]="announce" (ngSubmit)="onSubmitAnnounce()" style="margin-top: 10px">
+
+                        <ons-list>
+                                <ons-list-item>
+                                Titre
+                                <ons-input class="w3-input" formControlName="title" required></ons-input>
+                                </ons-list-item>
+
+                                <ons-list-item>
+                                Sous-Titre
+                                <ons-input class="w3-input" formControlName="subTitle"></ons-input>
+                                </ons-list-item>
+
+                                <ons-list-item>
+                                Université: 
+                                <select class="w3-select" (change)="univs.onChange($event.target.value)" formControlName="university" required>
+                                    <option *ngFor="let uni of univs.university" [value]="uni">{{uni}}</option>
+                                  </select>
+                                </ons-list-item>
+
+                                Annonce
+                                <ons-list-item>
+                                    <textarea style="width: 100%" rows="3" formControlName="text" class="w3-input" placeholder="Message ici..." required></textarea>
+                                </ons-list-item>
+
+                                <ons-list-item>
+                                    <span>Image à envoyer</span>
+                                      <ons-input type="file" class="w3-input" (change)="uploadFile($event)" formControlName="image"></ons-input>
+                                </ons-list-item>
+
+                              </ons-list>
+                              <div *ngIf="load.percentage | async as pct">
+                                <mat-progress-bar mode="determinate" [value]="pct" max="100"></mat-progress-bar>
+                                {{ pct | number }}%
+                              </div>
+
+                          <div style="text-align: center; margin: 10px" *ngIf="load.downloadState != 'started'">
+                              <button type="submit" [disabled]="!announce.valid">Envoyer</button>
+                              </div>
+                          </form>
+        
+                    </div>
+      </div>
+
+            <!--fin university section-->
+                </ons-page>
+     

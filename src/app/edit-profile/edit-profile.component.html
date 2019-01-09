@@ -1,0 +1,39 @@
+<ons-page>
+  <ons-toolbar>
+    <ons-back-button></ons-back-button>
+    <div class="center" sty>Modifier</div>
+  </ons-toolbar>  
+  
+  <ons-list>
+      <ons-list-item>
+         <label>Matricule</label>
+         <input class="w3-input" [(ngModel)]="newUser.matricule">
+      </ons-list-item>
+      <ons-list-item>
+          Université: 
+          <select class="w3-select" (change)="univs.onChange($event.target.value)" [(ngModel)]="newUser.university">
+              <option *ngFor="let uni of univs.university">{{uni}}</option>
+            </select>
+      </ons-list-item>
+      <ons-list-item>
+          Filière: 
+          <select class="w3-select" [(ngModel)]="newUser.spinneret">
+              <option *ngFor="let spin of univs.spinnerets">{{spin}}</option>
+            </select>
+      </ons-list-item>
+      <ons-list-item>
+          Niveau:
+           <select class="w3-select" [(ngModel)]="newUser.level">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </ons-list-item>
+      </ons-list>
+  <div style="text-align: center; margin: 10px;">
+  <ons-button (click)="updateUser()">Modifier</ons-button>
+  </div>
+  
+</ons-page>

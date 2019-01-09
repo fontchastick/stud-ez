@@ -1,0 +1,35 @@
+<ons-toolbar>
+    <div class="center">
+      Profil
+    </div>
+    <div class="left">
+      <ons-toolbar-button (click)="openMenu()">
+        <ons-icon icon="md-menu"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+  </ons-toolbar>
+  <div class="content">
+    <img [src]="database.user.image" alt="Photo de profil" style="width: 100%;">
+      <div>
+         
+        </div>
+      <ons-list>
+        <ons-list-item>
+        Nom:     <div style="text-align: center">{{database.user.name}}</div>            
+        </ons-list-item>
+        <ons-list-item>
+        Matricule:           {{database.user.matricule}}
+        </ons-list-item>
+        <ons-list-item>
+        Email:               {{database.user.email}}
+        </ons-list-item>
+        <ons-list-item>
+        Université:          {{database.user.university}}
+        </ons-list-item>
+        <ons-list-item>
+        Filière:             {{database.user.spinneret}} {{database.user.level}}
+        </ons-list-item>
+      </ons-list>
+
+      <ons-button (click)="push()" style="width: 100%; text-align: center; margin-top: 30px">Modifier</ons-button>
+  </div>

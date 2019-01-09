@@ -1,0 +1,27 @@
+<ons-page>
+
+    <div class="box">
+
+        <div style="margin: 10px;">
+
+        <div>
+            <ons-input placeholder="Email" class="w3-input" [(value)]="email" type="email"></ons-input>
+        </div>
+
+        <div>
+            <ons-input placeholder="Password" class="w3-input" [(value)]="password" type="password"></ons-input>
+        </div>                    
+        <div style="text-align: center; margin: 10px;">
+        <ons-button (click)="signInWithEmail()">se connecter</ons-button>
+        </div>
+
+        <div class="line"></div>
+
+        <div style="text-align: center; margin: 30px">
+            <span style="font-size: 15px">Pas encore inscrit?</span>
+        <ons-button (click)="goToSignUp()" class="w3-red">s'inscrire</ons-button>
+        </div>
+    </div>
+
+    </div>
+</ons-page>

@@ -1,0 +1,39 @@
+<ons-page>
+    <ons-toolbar>
+        <div class="center">
+            Autoriser
+          </div>
+          <div class="left">
+            <ons-toolbar-button (click)="openMenu()">
+              <ons-icon icon="md-menu"></ons-icon>
+            </ons-toolbar-button>
+          </div>
+    </ons-toolbar>  
+    
+    <ons-card>
+        <ons-list>
+         <ons-list-item>
+            Rechercher: 
+             <input class="w3-input" placeholder="Matricule" [(ngModel)]="matricule">
+         </ons-list-item>   
+
+         <ons-list-item>
+                <ons-button (click)="search()" style="text-align: center; margin: 10px; width: 100%">rechercher</ons-button>
+         </ons-list-item>
+         </ons-list>
+       </ons-card>
+
+       <ons-card class="card" *ngIf="user.matricule != ''" (click)="database.allow(user)">
+    
+          <div class="card-header">
+              {{user.matricule }}
+          </div>
+          <div class="card-content">
+              {{user.name }}
+          </div>
+          <div *ngIf="user.type == 'head'">délégué</div>
+
+        </ons-card>
+    
+    
+  </ons-page>

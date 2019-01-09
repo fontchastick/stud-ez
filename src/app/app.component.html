@@ -1,0 +1,42 @@
+<ons-page>
+
+<ons-splitter *ngIf="auth.authState == 'true'">
+  <ons-splitter-side #menu side="left" width="220px" [attr.collapse]="'collapse'" [attr.swipeable]="'swipeable'">
+          <ons-page>
+            <ons-list>
+              <ons-list-item (click)="loadPage(messages)" tappable>
+                Messages
+              </ons-list-item>
+              <ons-list-item (click)="loadPage(profile)" tappable>
+                Profil
+              </ons-list-item>
+              <ons-list-item (click)="loadPage(store)" tappable>
+                Store
+              </ons-list-item>
+              
+              <ons-list-item *ngIf="database.user.type == 'AE'" (click)="loadPage(send)" tappable>
+                Envoyer
+              </ons-list-item>
+
+              <ons-list-item *ngIf="database.user.type == 'AE'" (click)="loadPage(allow)" tappable>
+                  Autoriser
+                </ons-list-item>
+
+              <ons-list-item (click)="logOff()" style="margin-top: 30px" tappable>
+                Quitter
+            </ons-list-item>
+            </ons-list>
+          </ons-page>
+        </ons-splitter-side>
+        <ons-splitter-content>
+          <ons-navigator #navi [page]="messages"></ons-navigator>
+        </ons-splitter-content>
+      </ons-splitter>
+
+      
+      <div *ngIf="auth.authState =='false'">
+            <ons-navigator [page]="initialPage"></ons-navigator>
+          </div>
+        
+
+  </ons-page>

@@ -1,0 +1,107 @@
+<ons-page>
+<ons-toolbar>
+    <div class="center">
+        Messages
+          </div>
+    <div class="left">
+      <ons-toolbar-button (click)="openMenu()">
+        <ons-icon icon="md-menu"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+  </ons-toolbar>
+
+  <div class="content">
+
+      <div class="center">
+          <ons-segment #segment id="segment" style="width: 100%; margin-top: 8px; position: fixed; z-index: 1;">
+            <button (click)="index = 0">Classe</button>
+            <button (click)="index = 1">Université</button>
+          </ons-segment>
+        </div>
+    
+            <!--debut classe section-->
+    
+            <div *ngIf="index == 0" style="margin-top: 40px">
+                <ons-card *ngFor="let message of messages | async" class="card">
+    
+                    <div class="card-header">
+                        {{message.title }}
+                    </div>
+                    <div class="card-content">
+                        {{message.content }}
+                    </div>
+                
+      
+                <h4 class="card-time">
+                  {{message.time | date: 'medium'}}
+                </h4>
+                  </ons-card>
+    
+                </div>
+    
+            <!--fin classe section-->
+    
+            <!--debut university section-->
+    
+            <div  *ngIf="index == 1" style="margin-top: 40px">
+                <ons-card *ngFor="let announce of announces | async" class="card">
+    
+                    <div class="card-title">
+                        {{announce.title }}
+                    </div>
+                    <img [src]="announce.image">
+                      <div class="card-sub-title">
+                        {{announce.subTitle}}
+                      </div>
+                    <div class="card-content">
+                        {{announce.text }}
+                    </div>
+                
+      
+                <h4 class="card-time">
+                  {{message.time | date: 'medium'}}
+                </h4>
+                  </ons-card>
+    
+                </div>
+  </div>
+
+  
+
+        <!--fin university section-->
+        <ons-bottom-toolbar *ngIf="database.user.type == 'head'">
+            <ons-button (click)="modal.show()"  style="width: 100%; text-align: center">Enyoyer une information</ons-button>
+          </ons-bottom-toolbar>
+
+            </ons-page>
+ 
+            
+
+
+                      <!--Modal Page-->
+
+  
+
+
+  <ons-modal #modal style="background-color: white" animation="lift">
+
+      <ons-toolbar>
+            <ons-toolbar-button (click)="modal.hide()">
+              <ons-icon icon="chevron-left"></ons-icon>
+            </ons-toolbar-button>
+        </ons-toolbar>
+
+    <div class="box">
+
+      <ons-input [(value)]="message.title" class="w3-input" placeholder="Titre"></ons-input> <br/>
+      <br/>
+      <br/>
+      <textarea style="width: 100%" rows="3"  class="w3-input" [(ngModel)]="message.content" placeholder="Message ici..."></textarea><br/>
+      <br/>
+      <br/>
+      <ons-button (click)="sendMessage()" style="width: 100%; text-align: center">Enyoyer</ons-button>
+
+
+    </div>
+
+  </ons-modal>

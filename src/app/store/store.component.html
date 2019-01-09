@@ -1,0 +1,57 @@
+<ons-page>
+<ons-toolbar>
+    <div class="center">
+      Store
+    </div>
+    <div class="left">
+      <ons-toolbar-button (click)="openMenu()">
+        <ons-icon icon="md-menu"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+  </ons-toolbar>
+  <div class="content">
+       <ons-card>
+         <ons-list>
+          <ons-list-item>
+              Université: 
+              <select class ="w3-select" (change)="univs.onChange($event.target.value)" [(ngModel)]="search.university">
+                  <option *ngFor="let uni of univs.university">{{uni}}</option>
+                </select>
+          </ons-list-item>
+          <ons-list-item>
+              Filière: 
+              <select class ="w3-select" [(ngModel)]="search.spinneret" name="Spinneret" >
+                  <option *ngFor="let spin of univs.spinnerets">{{spin}}</option>
+                </select>
+          </ons-list-item>
+          <ons-list-item>
+              Niveau: <select class ="w3-select" [(ngModel)]="search.level">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </ons-list-item>
+          </ons-list>
+        </ons-card>
+           <div style="margin: auto; opacity: 0.6; width: 30vh; padding-top: 20px;">
+              <mat-spinner *ngIf="spinning == true" class="spinner"></mat-spinner>
+           </div>
+
+    <ons-card *ngFor="let course of courses">
+        <h2>{{course.title}}</h2>
+        <h3>{{course.subject}}</h3>
+        <h3>{{course.spinneret}}</h3>
+        <ons-button (click)="download(course.link)" style="width: 97%; text-align: center">Télécharger</ons-button>
+     </ons-card>
+  </div>
+
+  
+
+
+  <ons-bottom-toolbar>
+      <ons-button (click)="seek()" *ngIf="isSearching == false" style="width: 100%; text-align: center">Rechercher</ons-button>
+    </ons-bottom-toolbar>
+
+  </ons-page>

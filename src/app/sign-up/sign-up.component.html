@@ -1,0 +1,51 @@
+<ons-page>
+    <ons-toolbar>
+        <div class="center">Inscription</div>
+      <ons-back-button></ons-back-button>
+    </ons-toolbar>
+
+    <div class="box">
+
+        <div style="margin: 10px">
+
+        <div>
+            <ons-input placeholder="Name" class="w3-input" [(value)]="user.name" type="email"></ons-input>
+        </div>
+        <div>
+            <ons-input placeholder="Email"class="w3-input" [(value)]="user.email" type="email"></ons-input>
+        </div>
+        <div>
+            <ons-input placeholder="Pasword" class="w3-input" [(value)]="user.password" type="password"></ons-input>
+        </div>
+
+        <div>
+            <ons-input placeholder="Password verification" class="w3-input" [(value)]="user.confirmPassword" type="password"></ons-input>
+        </div>          
+         <ons-input class="w3-input" placeholder="Matricule" [(value)]="user.matricule"></ons-input>
+
+          Université: 
+          <select class="w3-select" (change)="univs.onChange($event.target.value)" [(ngModel)]="user.university">
+              <option *ngFor="let uni of univs.university">{{uni}}</option>
+            </select>
+
+          Filière: 
+          <select class="w3-select" [(ngModel)]="user.spinneret">
+              <option *ngFor="let spin of univs.spinnerets">{{spin}}</option>
+            </select>
+
+          Niveau:
+           <select class="w3-select" [(ngModel)]="user.level">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>          
+        <div style="text-align: center; margin-top: 30px;">
+        <ons-button (click)="signUpWithEmail()">s'inscrire</ons-button>
+        </div>
+
+    </div>
+
+    </div>
+</ons-page>
