@@ -15,6 +15,7 @@ export class UniversitiesServices {
             'Ecole Supérieure des Sciences Economiques et Commerciales (ESSEC)',
             "Ecole Normale Supérieure d'Enseignement Technique (ENSET)",
             'Institut Universitaire de Technologie (IUT)',
+            'Institut Universitaire de la Côte (IUC)'
           ]
         
           public FLSH = [ 'Anthropologie' ,'Communication', 'Communication et développement durable', 
@@ -83,6 +84,8 @@ export class UniversitiesServices {
          "Organisation et gestion administrative", "Pétrole, gaz",
           "Qualité, hygiène et sécurité des aliments", 'Tronc commun',
            "Valorisation des énergies renouvelables-production de la petite énergie"]
+
+           public IUC = ["TIC 1A", "TIC 1B", "TIC 1C"]
     
     constructor() {
 
@@ -116,6 +119,9 @@ getSpinnerets(university) {
             break;
         case 'Institut Universitaire de Technologie (IUT)':
             this.spinnerets = this.IUT;
+            break;
+        case 'Institut Universitaire de la Côte (IUC)':
+            this.spinnerets = this.IUC;
             break;
         default:
             this.spinnerets = this.FS;
