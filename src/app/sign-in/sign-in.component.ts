@@ -22,6 +22,14 @@ export class SignInComponent implements OnInit {
 
   signInWithEmail() {
     this.auth.signIn(this.email, this.password)
+    .catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+
+      alert("error "+ errorCode+ ": "+errorMessage)
+      // ...
+    });  
   }
 
   ngOnInit() {

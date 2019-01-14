@@ -25,6 +25,7 @@ export class SendComponent implements OnInit {
       level: new FormControl(''),
       subject: new FormControl(''),
       type: new FormControl(''),
+      size: new FormControl(''),
       file: new FormControl(''),
       time: new FormControl(Date.now()),
       link: new FormControl('')
@@ -54,6 +55,8 @@ export class SendComponent implements OnInit {
 
   uploadFile(event) {
     this.file = event.target.files[0];
+    this.document.value.size = this.file.size;
+    this.document.value.title = this.file.name;
     }
 
   onSubmitCourse() {

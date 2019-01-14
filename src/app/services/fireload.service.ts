@@ -23,7 +23,7 @@ export class FireloadService {
 
     this.downloadState = "started";
 
-    this.task = this.storage.upload(`${document.title} ${document.time.toString()}`, file)
+    this.task = this.storage.upload(`${document.size} ${document.title}`, file)
     this.task.then(
         x => { this.downloadState = "finished"
             x.ref.getDownloadURL().then( y => {

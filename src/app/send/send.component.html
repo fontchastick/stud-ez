@@ -27,11 +27,6 @@
 
                         <ons-list>
                                 <ons-list-item>
-                                Nom du document
-                                <ons-input class="w3-input" formControlName="title" required></ons-input>
-                                </ons-list-item>
-
-                                <ons-list-item>
                                 Université: 
                                 <select class="w3-select" (change)="univs.onChange($event.target.value)" formControlName="university">
                                     <option *ngFor="let uni of univs.university" [value]="uni">{{uni}}</option>
@@ -81,7 +76,7 @@
                               </div>
 
                           <div style="text-align: center; margin: 10px" *ngIf="load.downloadState != 'started'">
-                              <button type="submit" [disabled]="!document.valid">Envoyer</button>
+                              <button type="submit" class="w3-button" style="width: 100%; color: white; margin-top: 30px; background-color:rgb(24, 103, 194, 0.81)" [disabled]="!document.valid">Envoyer</button>
                               </div>
                           </form>
                 
