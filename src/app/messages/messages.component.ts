@@ -6,6 +6,7 @@ import { database } from 'firebase';
 import { User } from '../services/user';
 import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'ons-page[messages]',
@@ -23,7 +24,7 @@ export class MessagesComponent implements OnInit {
           index= 0;
 
   constructor(private _navigator: OnsNavigator, private inj: Injector, public database: DatabaseService, 
-    public auth: AuthService) {
+    public auth: AuthService, public theme: ThemeService) {
    }
 
    sendMessage() {

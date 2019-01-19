@@ -1,5 +1,6 @@
-<ons-toolbar>
-    <div class="center">
+<ons-page>
+    <ons-toolbar [style.background]="theme.theme.background">
+        <div class="center" [style.color]="theme.theme.color">
       Profil
     </div>
     <div class="left">
@@ -33,3 +34,5 @@
 
       <ons-button (click)="push()" style="width: 100%; text-align: center; margin-top: 30px">Modifier</ons-button>
   </div>
+
+</ons-page>

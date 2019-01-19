@@ -4,6 +4,8 @@ import { User } from '../services/user';
 import { UniversitiesServices } from '../services/universities.service';
 import * as ons from 'onsenui';
 import { OnsNavigator } from 'ngx-onsenui';
+import { MessagingService } from '../messaging.service';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'ons-page[edit-profile]',
@@ -14,12 +16,15 @@ export class EditProfileComponent implements OnInit {
 
   newUser = {matricule:"", university:"", spinneret:"", level:null}
 
-  constructor(public database: DatabaseService, public univs: UniversitiesServices, private _navigator: OnsNavigator) { }
+  constructor(public database: DatabaseService, public univs: UniversitiesServices, private _navigator: OnsNavigator, 
+    private msgService: MessagingService,  public theme: ThemeService) { }
 
   updateUser() {
     this.database.updateUser(this.newUser)
     .then( x => {
-      ons.notification.alert("Compte modifié!")
+      ons.notification.alert("Compte modifié! \
+      "  + this.theme.theme.message)
+      this.msgService.getPermission(this.newUser);
       this._navigator.element.popPage();
     });
   }

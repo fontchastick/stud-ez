@@ -11,6 +11,7 @@ import { AuthService } from './services/auth.service';
 import { MessagingService } from './messaging.service';
 import { SendComponent } from './send/send.component';
 import { AllowComponent } from './allow/allow.component';
+import { ThemeService } from './services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -31,7 +32,8 @@ export class AppComponent implements OnInit{
 
       message;
 
-      constructor(public auth: AuthService, public database: DatabaseService, private msgService: MessagingService){
+      constructor(public auth: AuthService, public database: DatabaseService, private msgService: MessagingService,
+        private theme: ThemeService){
         
       }
 
@@ -52,6 +54,7 @@ export class AppComponent implements OnInit{
           this.auth.user = result;
           this.database.getUser(result.uid).subscribe(x => {
             this.database.user = x;
+            this.theme.getTheme(x.university);
             this.msgService.getPermission(x);
           })
         });

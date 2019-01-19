@@ -3,6 +3,7 @@ import { AppComponent } from '../app.component';
 import { UniversitiesServices } from '../services/universities.service';
 import { DatabaseService } from '../services/database.service';
 import { Course } from '../services/course';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'ons-page[store]',
@@ -18,7 +19,8 @@ export class StoreComponent implements OnInit {
 
   public spinning = false;
 
-  constructor(private inj: Injector, public univs: UniversitiesServices, public database: DatabaseService) {
+  constructor(private inj: Injector, public univs: UniversitiesServices, public database: DatabaseService,
+    public theme: ThemeService) {
     console.log(this.search)
    }
       openMenu() {

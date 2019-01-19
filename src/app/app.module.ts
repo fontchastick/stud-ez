@@ -32,6 +32,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { MessagingService } from './messaging.service';
 import { SendComponent } from './send/send.component';
 import { AllowComponent } from './allow/allow.component';
+import { ThemeService } from './services/theme.service';
 
 const modules = [
   MatAutocompleteModule,
@@ -91,7 +92,8 @@ const modules = [
     DatabaseService, 
     FireloadService,
     AuthService,
-    MessagingService
+    MessagingService,
+    ThemeService
   ],
 
   schemas: [
