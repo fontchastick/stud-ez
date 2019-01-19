@@ -55,7 +55,7 @@ export class UniversitiesServices {
          public FGI = [ 'Génie civil','TCI : Technologie de Construction Industrielle','TAU : Technologie Automobile',
             'ROI: Robotique Industrielle', 'PEI/GM : Pêche/Génie Maritime',
              "TTIC : télécommunication et Technologie de l'information et de la communication",
-            'HSSI: Hygiène Sécurité et Sûreté Industrielle', 'GPR/GCH : Génie des Procédés/Génie Chimique']
+            'HSSI: Hygiène Sécurité et Sûreté Industrielle', 'GPR/GCH : Génie des Procédés/Génie Chimique', 'Tronc commun']
 
         public FMSP = ['Pharmacie','Médecine','Biologie clinique','Ethnobotanique et Pharmacie galénique']
 

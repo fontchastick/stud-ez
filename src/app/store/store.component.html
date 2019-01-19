@@ -10,7 +10,7 @@
     </div>
   </ons-toolbar>
   <div class="content">
-       <ons-card>
+       <ons-card *ngIf="visible == true">
          <ons-list>
           <ons-list-item>
               Université: 
@@ -35,6 +35,12 @@
             </ons-list-item>
           </ons-list>
         </ons-card>
+
+        <div style="text-align: center; margin: 10px">
+            <ons-button (click)="visible = !visible"  [style.background]="theme.theme.background" 
+            [style.color]="theme.theme.color">Paramètres</ons-button>
+            </div>
+
            <div style="margin: auto; opacity: 0.6; width: 30vh; padding-top: 20px;">
               <mat-spinner *ngIf="spinning == true" class="spinner"></mat-spinner>
            </div>
@@ -51,7 +57,8 @@
 
 
   <ons-bottom-toolbar>
-      <ons-button (click)="seek()" *ngIf="isSearching == false" style="width: 100%; text-align: center">Rechercher</ons-button>
+      <ons-button (click)="seek()" *ngIf="isSearching == false" style="width: 100%; text-align: center"
+      [style.background]="theme.theme.background" [style.color]="theme.theme.color">Rechercher</ons-button>
     </ons-bottom-toolbar>
 
   </ons-page>

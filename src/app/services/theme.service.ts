@@ -38,7 +38,7 @@ export class ThemeService {
              'Marketing-commerce-vente', 'Sciences et techniques comptables et financières', 'Tronc commun'
              ]
 
-         public FGI = {background: "pink", color: "white", message: "La liste Rose vous salue!"}
+         public FGI = {background: "rgb(255, 75, 225)", color: "white", message: "La liste Rose vous salue!"}
 
         public FMSP = ['Pharmacie','Médecine','Biologie clinique','Ethnobotanique et Pharmacie galénique']
 
@@ -110,10 +110,6 @@ getTheme(university) {
     console.log(this.theme)
 }
 
-onChange(event) {
-    this.getTheme(event);
-    console.log(event)
-  }
 
 
 }

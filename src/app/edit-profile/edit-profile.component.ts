@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from '../services/database.service';
-import { User } from '../services/user';
 import { UniversitiesServices } from '../services/universities.service';
 import * as ons from 'onsenui';
 import { OnsNavigator } from 'ngx-onsenui';
@@ -30,8 +29,6 @@ export class EditProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-   /* this.database.getUser()
-    .subscribe(x => this.user = x)*/
     this.univs.onChange(this.database.user.university);
     this.newUser.matricule = this.database.user.matricule
     this.newUser.university = this.database.user.university;
