@@ -52,13 +52,10 @@ export class UniversitiesServices {
              'Marketing-commerce-vente', 'Sciences et techniques comptables et financières', 'Tronc commun'
              ]
 
-         public FGI = ['Administration réseaux', 'Carrosserie et suspensions', 'Construction civile',
-            'Construction industrielle', 'Construction mécanique', 'Construction navale',
-            'Environnement industriel', 'Fabrication mécanique/productique', 'Génie mécanique navale', 
-            'Gestion d’entreprise de pêche', 'Hygiène industrielle', 'Mécatronique',
-            'Moteur et transmission', 'Ouvrages hydrauliques', 'Qualité et normalisation',
-            'Radio et télévision', 'Sécurité et sûreté industrielles', 'Télécommunication', 'Tronc commun',
-            'Voies et ouvrages d’art']
+         public FGI = [ 'Génie civil','TCI : Technologie de Construction Industrielle','TAU : Technologie Automobile',
+            'ROI: Robotique Industrielle', 'PEI/GM : Pêche/Génie Maritime',
+             "TTIC : télécommunication et Technologie de l'information et de la communication",
+            'HSSI: Hygiène Sécurité et Sûreté Industrielle', 'GPR/GCH : Génie des Procédés/Génie Chimique']
 
         public FMSP = ['Pharmacie','Médecine','Biologie clinique','Ethnobotanique et Pharmacie galénique']
 
