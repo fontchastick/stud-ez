@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 @Injectable()
 export class ThemeService {
 
-    public theme = {background: "", message: ""}
+    public theme = {background: "", color: "",message: ""}
 
         public university= [
             'Faculté de Lettres et Sciences Humaines (FLSH)',
