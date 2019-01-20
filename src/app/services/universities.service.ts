@@ -18,7 +18,7 @@ export class UniversitiesServices {
             'Institut Universitaire de la Côte (IUC)'
           ]
         
-          public FLSH = [ 'Anthropologie' ,'Communication', 'Communication et développement durable', 
+          public FLSH = [' ', 'Anthropologie' ,'Communication', 'Communication et développement durable', 
           'Communication évènementielle et publicitaire', 'Didactique du français', 'English', 
           'Etudes bilingues', 'Etudes germaniques','Etudes ibériques','Géographie',
           'Gestion des ressources humaines','Gestion et études sociopolitiques','Histoire',
@@ -29,7 +29,7 @@ export class UniversitiesServices {
 
           public FSJP = [ "En cours d'ajustement!"]
 
-          public FS = [ 'Algèbre, analyse et géométrie', 'Biochimie', 'Bio-informatique et bio statistiques'
+          public FS = [' ', 'Algèbre, analyse et géométrie', 'Biochimie', 'Bio-informatique et bio statistiques'
             , 'Biologie des organismes et des écosystèmes', 'Biologie humaine et santé', 
              'Biologie moléculaire et cellulaire', 'Biologie des organismes et des écosystèmes',
             'Chimie de l’environnement', 'Chimie et biologie', 'Chimie inorganique', 'Chimie organique',
@@ -45,32 +45,32 @@ export class UniversitiesServices {
             'Unité de formation doctorale de mathématiques appliquées et physique fondamentale',
             'Zoologie approfondie']
 
-         public FSEGA = ['Actuariat', 'Administration et gestion des collectivités territoriales décentralisées', 
+         public FSEGA = [' ', 'Actuariat', 'Administration et gestion des collectivités territoriales décentralisées', 
             'Analyse et évaluation des projets','Administration des entreprises','Comptabilité et finance',
             'Comptabilité-finance','Création et management des entreprises touristiques',
             'Comptabilité, audit, contrôle', 'Expertise comptable', 'Gestion financière et bancaire',
              'Marketing-commerce-vente', 'Sciences et techniques comptables et financières', 'Tronc commun'
              ]
 
-         public FGI = [ 'Génie civil','TCI : Technologie de Construction Industrielle','TAU : Technologie Automobile',
+         public FGI = [' ', 'Génie civil','TCI : Technologie de Construction Industrielle','TAU : Technologie Automobile',
             'ROI: Robotique Industrielle', 'PEI/GM : Pêche/Génie Maritime',
              "TTIC : télécommunication et Technologie de l'information et de la communication",
             'HSSI: Hygiène Sécurité et Sûreté Industrielle', 'GPR/GCH : Génie des Procédés/Génie Chimique', 'Tronc commun']
 
-        public FMSP = ['Pharmacie','Médecine','Biologie clinique','Ethnobotanique et Pharmacie galénique']
+        public FMSP = [' ', 'Pharmacie','Médecine','Biologie clinique','Ethnobotanique et Pharmacie galénique']
 
-        public ESSEC = ['Etudes en administration des affaires', 
+        public ESSEC = [' ', 'Etudes en administration des affaires', 
         'Etudes en commerce international et supply chain management', 
         'Etudes professionnelles approfondies', 'Etudes professionnelles en organisation et management', 
         'Etudes professionnelles en techniques de gestion des pme/pmi', 'Etudes supérieures de commerce', 'Tronc commun']
 
-        public ENSET = ["Banque et micro finance", "Comptabilité-finance-audit", "Génie civil",
+        public ENSET = [' ', "Banque et micro finance", "Comptabilité-finance-audit", "Génie civil",
          "Génie mécanique et productique", "Gestion des projets informatiques", 
          "Gestion des ressources humaines", "Gestion technico-commerciale", 
          "Industrie textile et de l'habillement", "Maintenance après-vente automobile", "Métiers bois",
           "Réseau et télécommunication", 'Tronc commun']
         
-        public IUT = ["Action commerciale", "Administration et sécurité des réseaux", 
+        public IUT = [' ', "Action commerciale", "Administration et sécurité des réseaux", 
         "Commerce-négociation-vente::  Comptabilité et gestion", "Construction mécanique", "Electronique",
          "Fabrication mécanique", "Génie biomédical", "Génie des mines",
           "Génie des réseaux et télécommunication", "Génie électrique et informatique industrielle", 
@@ -82,7 +82,7 @@ export class UniversitiesServices {
           "Qualité, hygiène et sécurité des aliments", 'Tronc commun',
            "Valorisation des énergies renouvelables-production de la petite énergie"]
 
-           public IUC = ["TIC 1A", "TIC 1B", "TIC 1C"]
+           public IUC = [' ', "TIC 1A", "TIC 1B", "TIC 1C"]
     
     constructor() {
 
