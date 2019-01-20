@@ -69,8 +69,9 @@
   
 
         <!--fin university section-->
-        <ons-bottom-toolbar *ngIf="database.user.type == 'head'">
-            <ons-button (click)="modal.show()"  style="width: 100%; text-align: center">Enyoyer une information</ons-button>
+        <ons-bottom-toolbar *ngIf="database.user.type > 1">
+            <ons-button (click)="modal.show()"  style="width: 100%; text-align: center"
+            [style.background]="theme.theme.background" [style.color]="theme.theme.color">Enyoyer une information</ons-button>
           </ons-bottom-toolbar>
 
             </ons-page>
@@ -99,7 +100,8 @@
       <textarea style="width: 100%" rows="3"  class="w3-input" [(ngModel)]="message.content" placeholder="Message ici..."></textarea><br/>
       <br/>
       <br/>
-      <ons-button (click)="sendMessage()" style="width: 100%; text-align: center">Enyoyer</ons-button>
+      <ons-button (click)="sendMessage()" style="width: 100%; text-align: center"
+      [style.background]="theme.theme.background" [style.color]="theme.theme.color">Enyoyer</ons-button>
 
 
     </div>

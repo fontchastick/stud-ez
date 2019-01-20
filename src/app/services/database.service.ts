@@ -66,8 +66,8 @@ getCourses(search):  Observable<any[]>{
 
 allow(newUser){
     let itemDocu = this.afs.doc<any>(`Users/${newUser.uid}`);
-    if(newUser.type == 'head') itemDocu.update({type: ''})
-    else itemDocu.update({type: 'head'})
+    if(newUser.type == 2) itemDocu.update({type: ''})
+    else itemDocu.update({type: 2})
 
 }
 

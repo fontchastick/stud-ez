@@ -49,7 +49,8 @@
         <h2>{{course.title}}</h2>
         <h3>{{course.subject}}</h3>
         <h3>{{course.spinneret}}</h3>
-        <ons-button (click)="download(course.link)" style="width: 97%; text-align: center">Télécharger</ons-button>
+        <ons-button (click)="download(course.link)" style="width: 97%; text-align: center"
+        [style.background]="theme.theme.background" [style.color]="theme.theme.color">Télécharger</ons-button>
      </ons-card>
   </div>
 

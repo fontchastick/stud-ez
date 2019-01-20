@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { FireloadService } from '../services/fireload.service';
 import { UniversitiesServices } from '../services/universities.service';
 import { AppComponent } from '../app.component';
+import { DatabaseService } from '../services/database.service';
 
 @Component({
   selector: 'ons-page[send]',
@@ -47,7 +48,7 @@ export class SendComponent implements OnInit {
   @ViewChild('segment') _segment: any;
           index= 0;
 
-  constructor(public load: FireloadService, private inj: Injector, public univs: UniversitiesServices) { }
+  constructor(public load: FireloadService, private inj: Injector, public univs: UniversitiesServices, public database: DatabaseService) { }
 
   openMenu() {
     this.inj.get(AppComponent).menu.nativeElement.open();

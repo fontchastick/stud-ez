@@ -14,11 +14,11 @@
                 Store
               </ons-list-item>
               
-              <ons-list-item *ngIf="database.user.type == 'AE'" (click)="loadPage(send)" tappable>
+              <ons-list-item *ngIf="database.user.type > 1" (click)="loadPage(send)" tappable>
                 Envoyer
               </ons-list-item>
 
-              <ons-list-item *ngIf="database.user.type == 'AE'" (click)="loadPage(allow)" tappable>
+              <ons-list-item *ngIf="database.user.type > 2" (click)="loadPage(allow)" tappable>
                   Autoriser
                 </ons-list-item>
 

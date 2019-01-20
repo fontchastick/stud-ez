@@ -13,10 +13,16 @@
       <div class="content">
     
           <div class="center" *ngIf="load.downloadState != 'started'">
-              <ons-segment #segment id="segment" style="width: 100%; margin-top: 8px; position: fixed; z-index: 1;">
+              <ons-segment #segment id="segment" *ngIf="database.user.type > 2; else elseBlock" style="width: 100%; margin-top: 8px; position: fixed; z-index: 1;">
                 <button (click)="index = 0">Document</button>
                 <button (click)="index = 1">Annonce</button>
               </ons-segment>
+
+              <ng-template #elseBlock>
+                  <ons-segment style="width: 100%; margin-top: 8px; position: fixed; z-index: 1;">
+                      <button>Document</button>
+                    </ons-segment>
+              </ng-template>
             </div>
         
                 <!--debut document section-->
@@ -125,7 +131,7 @@
                               </div>
 
                           <div style="text-align: center; margin: 10px" *ngIf="load.downloadState != 'started'">
-                              <button type="submit" [disabled]="!announce.valid">Envoyer</button>
+                              <button type="submit" class="w3-button" style="width: 100%; color: white; margin-top: 30px; background-color:rgb(24, 103, 194, 0.81)" [disabled]="!announce.valid">Envoyer</button>
                               </div>
                           </form>
         

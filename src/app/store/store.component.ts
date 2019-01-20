@@ -14,6 +14,8 @@ export class StoreComponent implements OnInit {
 
   public search = { level: null, spinneret: "", university: "" };
 
+  public visible = true;
+
   courses;
   isSearching= false;
 

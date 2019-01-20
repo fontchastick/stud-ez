@@ -11,7 +11,7 @@ export class User {
     level: number;
     paid: number;
     paymentId: string;
-    type: string;
+    type: number;
 
     constructor() {
         this.uid = "",
@@ -26,6 +26,6 @@ export class User {
         this.level = null,
         this.paid = null,
         this.paymentId = "",
-        this.type = ""
+        this.type = null
     }
 }

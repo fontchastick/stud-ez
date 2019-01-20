@@ -13,7 +13,7 @@ import { ThemeService } from '../services/theme.service';
 export class SignUpComponent implements OnInit {
 
   user=  {name: "", email: "", password: "", confirmPassword:"", uid: "", img: "../../assets/default-picture.png",
-  matricule:"", university:"", spinneret:"", level:"", type:""};
+  matricule:"", university:"", spinneret:"", level:"", type: null};
 
   constructor(public auth: AuthService, public database: DatabaseService, public univs: UniversitiesServices,
     public theme: ThemeService) { }
